@@ -18,8 +18,7 @@ def change_signature_color(pdf_data):
 
     for page_num in range(len(pdf_document)):
         page = pdf_document.load_page(page_num)
-        # Reduce DPI from 4 to 2 for better file size while maintaining quality
-        pix = page.get_pixmap(matrix=fitz.Matrix(2, 2)) 
+        pix = page.get_pixmap(matrix=fitz.Matrix(3, 3)) 
         img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
         
         if page_num == 0:  # Only process first page for signature
