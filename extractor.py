@@ -72,7 +72,7 @@ def change_signature_color(pdf_data):
     
         img_byte_arr = io.BytesIO()
     
-        img.save(img_byte_arr, format='JPEG', quality=85, optimize=True) 
+        img.save(img_byte_arr, format='PNG') 
         img_byte_arr = img_byte_arr.getvalue()
         
         img_doc = fitz.open(stream=img_byte_arr, filetype="jpeg")
