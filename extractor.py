@@ -82,7 +82,6 @@ def change_signature_color(pdf_data):
         pdf_page.insert_image(
             rect,
             stream=img_byte_arr,
-            compression=fitz.PDF_FLATE_ENCODE  # Use Flate compression
         )
     
     return output_pdf
